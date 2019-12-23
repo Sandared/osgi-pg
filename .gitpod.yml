@@ -2,7 +2,7 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - command: source ~/.bash_profile
+  - command: source ~/.bash_profile && source ~/.mvn_bash_completion
 
 vscode:
   extensions:
