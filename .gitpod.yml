@@ -1,6 +1,9 @@
 image:
   file: .gitpod.Dockerfile
 
+tasks:
+  - command: source .bash_profile
+
 vscode:
   extensions:
     - shd101wyy.markdown-preview-enhanced@0.5.0:NvzH3QcCuRpKCWQ9++Vc9g==
