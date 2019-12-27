@@ -1,0 +1,23 @@
+{
+	"OSGi API Dependencies": {
+		"prefix": ["osgi", "osgi-api-dep"],
+		"body": [
+			"<dependency>",
+				"\t<groupId>org.osgi</groupId>",
+				"\t<artifactId>osgi.core</artifactId>",
+				"\t<version>7.0.0</version>",
+			"</dependency>",
+			"<dependency>",
+				"\t<groupId>org.osgi</groupId>",
+		 		"\t<artifactId>osgi.cmpn</artifactId>",
+				"\t<version>7.0.0</version>",
+			"</dependency>",
+			"<dependency>",
+				"\t<groupId>org.osgi</groupId>",
+				"\t<artifactId>osgi.annotation</artifactId>",
+				"\t<version>7.0.0</version>",
+			"</dependency>"
+		],
+		"description": "Prints the OSGi API Dependencies for a Maven POM"
+	}
+}
