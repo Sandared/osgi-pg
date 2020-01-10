@@ -4,9 +4,49 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "echo",
+			"label": "create api module",
 			"type": "shell",
-			"command": "echo Hello"
-		}
+			"command": "mvn org.apache.maven.plugins:maven-archetype-plugin:3.0.1:generate -DarchetypeGroupId=org.osgi.enroute.archetype -DarchetypeArtifactId=api -DarchetypeVersion=7.0.0"
+		},
+        {
+            "label": "create jax-rs module",
+            "type": "shell",
+            "command": "mvn org.apache.maven.plugins:maven-archetype-plugin:3.0.1:generate -DarchetypeGroupId=org.osgi.enroute.archetype -DarchetypeArtifactId=rest-component -DarchetypeVersion=7.0.0"
+        },
+        {
+            "label": "create test module",
+            "type": "shell",
+            "command": "mvn org.apache.maven.plugins:maven-archetype-plugin:3.0.1:generate -DarchetypeGroupId=org.osgi.enroute.archetype -DarchetypeArtifactId=bundle-test -DarchetypeVersion=7.0.0"
+        },
+        {
+            "label": "create implementation module",
+            "type": "shell",
+            "command": "mvn org.apache.maven.plugins:maven-archetype-plugin:3.0.1:generate -DarchetypeGroupId=org.osgi.enroute.archetype -DarchetypeArtifactId=ds-component -DarchetypeVersion=7.0.0"
+        },
+        {
+            "label": "create application module",
+            "type": "shell",
+            "command": "mvn org.apache.maven.plugins:maven-archetype-plugin:3.0.1:generate -DarchetypeGroupId=org.osgi.enroute.archetype -DarchetypeArtifactId=application -DarchetypeVersion=7.0.0"
+        },
+        {
+            "label": "resolve",
+            "type": "shell",
+            "command": "mvn -pl app -am bnd-indexer:index bnd-indexer:index@test-index bnd-resolver:resolve"
+        },
+        {
+            "label": "run debug config",
+            "type": "shell",
+            "command": "mvn package bnd-run:run@debug"
+        },
+        {
+            "label": "quickbuild",
+            "type": "shell",
+            "command": "mvn bnd:bnd-process@generate-osgi-manifest jar:jar@default-jar -Dio7m.quickBuild=true"
+        },
+        {
+            "label": "create manifest (Only for dev)",
+            "type": "shell",
+            "command": "mkdir -p target/classes/META-INF && touch target/classes/META-INF/MANIFEST.MF",
+        }
 	]
 }
