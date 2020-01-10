@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.qbilon</groupId>
-    <artifactId>processagent</artifactId>
+    <groupId>io.jatoms</groupId>
+    <artifactId>osgi-pg</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -55,8 +55,7 @@
     </pluginRepositories>
 
     <modules>
-        <module>processagent.impl</module>
-        <module>processagent.app</module>
+        
     </modules>
 
     <dependencyManagement>
@@ -101,16 +100,6 @@
                 <artifactId>lombok</artifactId>
                 <version>1.18.10</version>
                 <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>net.bytebuddy</groupId>
-                <artifactId>byte-buddy-agent</artifactId>
-                <version>1.10.6</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.aries.jax.rs</groupId>
-                <artifactId>org.apache.aries.jax.rs.jackson</artifactId>
-                <version>1.0.2</version>
             </dependency>
 
         </dependencies>

@@ -1,0 +1,4 @@
+# Any requests against your application can be put here
+# For more documentation see here: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+GET http://localhost:8080/hello
