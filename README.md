@@ -1,11 +1,12 @@
-# Example for error in Apache Aries JAX-RS Whiteboard
+# Example for NPE in Apache Aries JAX-RS Whiteboard
 
 ## Steps to reproduce
-**Open example workspace in Gitpod** 
+* Open example workspace in Gitpod
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Sandared/osgi-pg/tree/jaxrs) 
 
-**When server is up then execute:**
+* When server is up then execute: `
 curl -X PUT localhost:8080/v0.4/traces -H "Content-Type: application/json" -d @input.json
+`
 
 **Response**
 ```xml
