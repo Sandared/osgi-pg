@@ -5,3 +5,6 @@ vscode:
   extensions:
     - shd101wyy.markdown-preview-enhanced@0.5.0:NvzH3QcCuRpKCWQ9++Vc9g==
     - vscjava.vscode-maven@0.20.1:gdyOPlzH3PU5IkrigIg85g==
+    - alphabotsec.vscode-eclipse-keybindings@0.10.0:sHFK2cBlpLZsoaR/+m8Nig==
+    - GabrielBB.vscode-lombok@0.9.9:crmJ0s9mO0sdhxHl4cZaMw==
+    - humao.rest-client@0.23.0:JNawNa9Juht3Bl5xY2refg==
