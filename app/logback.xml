@@ -1,0 +1,31 @@
+<!--
+This is a logback configuration file with a bunch of details on tweaking OSGi logging.
+Go ahead and play around with it.
+-->
+
+<configuration>
+	<!--  scan="true" scanPeriod="5 seconds" debug="true"> -->
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- <pattern>%d{HH:mm:ss.SSS} [%.15thread] %-5level %logger{36}:%line - %msg%n</pattern> -->
+			<pattern>%-4relative [%.20thread] %-5level %logger{36}:%line - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- <logger name="Events.Service.org" level="INFO"/> -->
+
+    <logger name="org.apache.cxf" level="INFO"/>
+	<logger name="org.eclipse" level="INFO"/>
+	<logger name="org.eclipse.jetty" level="INFO"/>
+	<logger name="org.jboss" level="INFO"/>
+
+	<logger name="io.jatoms" level="DEBUG"/>
+
+	<root level="WARN">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

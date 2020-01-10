@@ -8,3 +8,29 @@ vscode:
     - alphabotsec.vscode-eclipse-keybindings@0.10.0:sHFK2cBlpLZsoaR/+m8Nig==
     - GabrielBB.vscode-lombok@0.9.9:crmJ0s9mO0sdhxHl4cZaMw==
     - humao.rest-client@0.23.0:JNawNa9Juht3Bl5xY2refg==
+
+tasks:
+- init: mkdir -p target/classes/META-INF && touch target/classes/META-INF/MANIFEST.MF && mvn install 
+  command: mvn -pl app -am bnd-indexer:index bnd-indexer:index@test-index bnd-resolver:resolve && mvn package bnd-run:run@debug
+
+ports:
+  - port: 8080
+
+github:
+  prebuilds:
+    # enable for the master/default branch (defaults to true)
+    master: true
+    # enable for all branches in this repo (defaults to false)
+    branches: true
+    # enable for pull requests coming from this repo (defaults to true)
+    pullRequests: true
+    # enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: true
+    # add a check to pull requests (defaults to true)
+    addCheck: true
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+    addComment: true
+    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
+    addBadge: false
+    # add a label once the prebuild is ready to pull requests (defaults to false)
+    addLabel: false

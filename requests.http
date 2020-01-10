@@ -1,4 +1,20 @@
 # Any requests against your application can be put here
 # For more documentation see here: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-GET http://localhost:8080/hello
+PUT https://8443-ac5c9d53-a665-486c-ae2a-ac4880905867.ws-eu01.gitpod.io/v0.4/traces 
+content-type: application/json
+
+[[
+{
+    "type": "sample",
+    "error": 1,
+    "duration": 123,
+    "parent_id": 0,
+    "start": 111,
+    "resource": "Some resource",
+    "name": "My name",
+    "service": "My Service",
+    "trace_id": 345,
+    "span_id": 678
+}
+]]
