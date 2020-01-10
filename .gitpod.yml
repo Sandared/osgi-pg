@@ -10,11 +10,14 @@ vscode:
     - humao.rest-client@0.23.0:JNawNa9Juht3Bl5xY2refg==
 
 tasks:
-- init: mkdir -p target/classes/META-INF && touch target/classes/META-INF/MANIFEST.MF && mvn install 
-  command: mvn -pl app -am bnd-indexer:index bnd-indexer:index@test-index bnd-resolver:resolve && mvn package bnd-run:run@debug
+- init: mkdir -p target/classes/META-INF && touch target/classes/META-INF/MANIFEST.MF && mvn install && mvn -pl app -am bnd-indexer:index bnd-indexer:index@test-index bnd-resolver:resolve
+  command: mvn package bnd-run:run@debug
 
 ports:
-  - port: 8080
+   - port: 8080
+     onOpen: ignore
+   - port: 8443
+     onOpen: ignore
 
 github:
   prebuilds:
