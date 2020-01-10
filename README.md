@@ -8,6 +8,24 @@
 curl -X PUT localhost:8080/v0.4/traces -H "Content-Type: application/json" -d @input.json
 `
 
+**Content of input.json:**
+```
+[[
+{
+    "type": "sample",
+    "error": 1,
+    "duration": 123,
+    "parent_id": 0,
+    "start": 111,
+    "resource": "Some resource",
+    "name": "My name",
+    "service": "My Service",
+    "trace_id": 345,
+    "span_id": 678
+}
+]]
+```
+
 **Response**
 ```xml
 <ns1:XMLFault xmlns:ns1="http://cxf.apache.org/bindings/xformat"><ns1:faultstring xmlns:ns1="http://cxf.apache.org/bindings/xformat">java.lang.NullPointerException</ns1:faultstring></ns1:XMLFault>
@@ -38,3 +56,5 @@ java.nio.channels.ClosedChannelException: null
         at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
         at java.base/java.lang.Thread.run(Thread.java:834)
 ```
+
+If the return type of our endpoint is changed to something other than void, then the NPE still gets thrown internall, but the response does not show it to the caller, but instead the value we return.

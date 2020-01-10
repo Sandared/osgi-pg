@@ -6,8 +6,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.jaxrs.whiteboard.propertytypes.JSONRequired;
@@ -22,7 +20,9 @@ public class ComponentImpl {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void receiveTraces(List<List<Trace>> traces) {
+        System.out.println("\n######################################################");
         System.out.println("recieveTraces was called, traces were " + traces);
+        System.out.println("######################################################\n");
     }
     
 }
