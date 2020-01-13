@@ -1,5 +1,19 @@
 # Example for NPE in Apache Aries JAX-RS Whiteboard
 
+## Solution
+The enroute POMs reference an old version of the aries jax-rs whiteboard. Within your app's pom.xml you have to explicitly overwrite this dependency by adding this to the dependencies section of your pom.xml:
+
+```xml
+ <!-- JAX-RS Whiteboard specific version because of bugfix-->
+ <dependency>
+    <groupId>org.apache.aries.jax.rs</groupId>
+    <artifactId>org.apache.aries.jax.rs.whiteboard</artifactId>
+    <version>1.0.6</version>
+    <scope>runtime</scope>
+</dependency>
+```
+
+
 ## Steps to reproduce
 * Open example workspace in Gitpod
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Sandared/osgi-pg/tree/jaxrs) 
